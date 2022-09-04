@@ -1,17 +1,17 @@
-const request =require('supertest');
-const  {app} = require('../server') 
-
+const supertest =require('supertest');
+const  server = require('../server') 
+const request = supertest(server.app)
 
 describe('Test Router and Value', function () {
 
   test('responds to /', async () => {
-    const res = await request(app).get('/');
+    const res = await request.get('/');
     expect(res.statusCode).toBe(200);
     expect(res.text).toEqual('Hello World !');
   });
 
   test('responds to /', async () => {
-    const body= await request(app).post('/person')
+    const body= await request.post('/person')
     .send({
         name : 'hassan',
         age: "45",
