@@ -2,9 +2,8 @@ const express = require('express')
 require("dotenv").config();
 const app = express()
 
-function name(params) {
-    console.log('Hiii ')
-}
+const cors = require('cors');
+app.use(cors())
 
 app.get('/', (req,res,next)=>{
     res.status(200).send('Hello World !')
