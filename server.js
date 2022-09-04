@@ -3,7 +3,7 @@ require("dotenv").config();
 const app = express()
 
 function name(params) {
-    console.log('hasan')
+    console.log('Hiii ')
 }
 
 app.get('/', (req,res,next)=>{
